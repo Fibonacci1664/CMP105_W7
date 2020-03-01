@@ -27,4 +27,6 @@ private:
 	Input* input;
 
 	Bit bits[6];
+
+	int bitsArrSize = (sizeof(bits) / sizeof(bits[0]));
 };

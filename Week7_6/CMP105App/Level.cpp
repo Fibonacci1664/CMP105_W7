@@ -23,7 +23,9 @@ void Level::handleInput(float dt)
 // Update game objects
 void Level::update(float dt)
 {
-	for(int i = 0; i <= 6; i++)
+	std::cout << "Bits array size: " << bitsArrSize << '\n';
+
+	for(int i = 0; i < bitsArrSize; i++)
 		bits[i].update(dt);
 }
 
@@ -31,7 +33,7 @@ void Level::update(float dt)
 void Level::render()
 {
 	beginDraw();
-	for (int i = 0; i <= sizeof(bits)/sizeof(bits[0]); i++)
+	for (int i = 0; i < bitsArrSize; i++)
 		window->draw(bits[i]);
 	endDraw();
 }
