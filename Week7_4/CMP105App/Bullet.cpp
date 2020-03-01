@@ -1,4 +1,5 @@
 #include "Bullet.h"
+#include <iostream>
 
 Bullet::Bullet()
 {
@@ -11,6 +12,7 @@ Bullet::Bullet()
 
 Bullet::~Bullet()
 {
+	std::cout << "Bullet object destroyed!\n";
 }
 
 void Bullet::update(float dt)

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <iostream>
 
 Player::Player()
 {
@@ -10,6 +11,7 @@ Player::Player()
 
 Player::~Player()
 {
+	std::cout << "Player object destroyed!\n";
 }
 
 void Player::handleInput(float dt)
@@ -24,6 +26,8 @@ void Player::handleInput(float dt)
 
 	if (input->isKeyDown(sf::Keyboard::Enter))
 	{
+		hasFired = false;
+
 		if (!hasFired)
 		{
 			bullet = spawn(getPosition() + sf::Vector2f(getSize().x / 2, getSize().y / 2));
@@ -34,13 +38,14 @@ void Player::handleInput(float dt)
 
 void Player::update(float dt) 
 {
-	if(hasFired)
+	if (hasFired)
+	{
 		bullet->update(dt);
+	}
 }
 
 Bullet* Player::spawn(sf::Vector2f pos)
 {
-	Bullet newBullet;
 	newBullet.setPosition(pos);
 	return &newBullet;
 }
