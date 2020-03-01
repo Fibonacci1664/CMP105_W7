@@ -31,7 +31,7 @@ void Level::render()
 {
 	beginDraw();
 	window->draw(player);
-	window->draw(*player.getBullet());
+	window->draw(*(player.getBullet()));			// Derefernecing whatever is rtnd from player.getBullet(), makes more sense when player.getBullet() is in parenthesis.
 	endDraw();
 }
 

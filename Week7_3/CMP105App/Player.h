@@ -11,10 +11,13 @@ public:
 
 	void handleInput(float dt);
 	void update(float dt);
-	Bullet* getBullet() {
-		return bullet;
-	};
+
+	Bullet* getBullet()
+	{
+		return ptr_bullet;
+	}
 
 private:
-	Bullet* bullet;
+	Bullet bullet;
+	Bullet* ptr_bullet = &bullet;
 };
